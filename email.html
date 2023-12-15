@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>submission form</title>
+    <link href="email.css" rel="stylesheet">
+</head>
+<body>
+    <div class="containor">
+        <form onsubmit="sendemail();reset(); return false;">
+            <h2>Fill The Form</h2>
+            <input type="text" id="name" placeholder="your name">
+            <input type="email" id="email" placeholder="email">
+            <input type="number" id="number" placeholder="phone number">
+            <textarea id="message" rows="4" placeholder="how can you helo you?"></textarea>
+            <button>submit</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendemail(){
+            Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "fijufijasashrafgmail.com",
+                    Password : "Fijas@123",
+                    To : 'fijufijasashraf@gmail.com',
+                    From : document.get.elementById("email"),
+                    Subject : "new contact form enquiry",
+                    Body : "And this is the body"
+                }).then(
+                message => alert(submitted)
+                );
+
+        }
+    </script>
+    
+</body>
+</html>
